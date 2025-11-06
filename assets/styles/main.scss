@@ -1,0 +1,38 @@
+@import "../../bower_components/bootstrap/scss/_functions.scss";
+@import "common/variables";
+
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+@import "../../bower_components/bootstrap/scss/_variables.scss";
+@import "../../bower_components/bootstrap/scss/_mixins.scss";
+@import "../../bower_components/bootstrap/scss/_reboot.scss";
+@import "../../bower_components/bootstrap/scss/_type.scss";
+@import "../../bower_components/bootstrap/scss/_grid.scss";
+@import "../../bower_components/bootstrap/scss/_transitions.scss";
+@import "../../bower_components/bootstrap/scss/_alert.scss";
+@import "../../bower_components/bootstrap/scss/_utilities.scss";
+// endbower
+
+@import "common/global";
+
+@import "components/wp-classes";
+@import "components/badge";
+@import "components/comments";
+@import "components/buttons";
+@import "components/forms";
+@import "components/wpforms";
+@import "components/floating-labels";
+@import "components/posts";
+@import "components/magnific-popup";
+@import "components/back-to-top";
+
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/sections";
+
+//to hide the tabs from the homepage
+//body.home {
+//  ul.entry-feature__terms.terms {
+//    display: none;
+//  }
+//}

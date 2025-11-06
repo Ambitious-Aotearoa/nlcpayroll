@@ -1,0 +1,24 @@
+{
+  "name": "acfactory/heal",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "",
+  "homepage": "https://skyrocketmarketing.com.au",
+  "authors": [
+    {
+      "name": "Joel Warren",
+      "email": "joel@skyrocketmarketing.com.au",
+      "homepage": "https://github.com/Joelwarren"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/Joelwarren/acfactory/issues"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": "~1.0"
+  }
+}

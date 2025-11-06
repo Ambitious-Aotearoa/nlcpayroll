@@ -1,0 +1,144 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Base styles
+//
+
+.btn {
+  display: inline-flex!important;
+  justify-content: center;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  color: $body-color;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  text-decoration: none!important;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
+
+  @include hover {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+    &.disabled,
+    &:disabled {
+      color: $value;
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+// Added btn-text-color
+@each $color, $value in $theme-colors {
+  .btn-text-#{$color} {
+    color: $value;
+  }
+}
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+  border-radius: 0;
+  min-width: 139px;
+  padding: 14px 15px;
+  @media (min-width: 992px) {
+    min-width: 239px;
+    padding: 31px 15px;
+  }
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+
+// Arrow button
+.svg-arrow {
+  margin-left: 50px;
+}
+
+.btn-arrow {
+  color: $primary;
+  background-color: transparent!important;
+  border: none!important;
+  padding: 0;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  &:focus {
+    box-shadow: none;
+  }
+  @supports (mask-image: url("")) {
+    &:after {
+      content: " ";
+      width: 37px;
+      height: 13px;
+      margin-left: 10px;
+      transition: all 0.2s;
+      display: inline-block;
+      background-color: $primary;
+      mask: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAANCAYAAAAuYadYAAAAtklEQVRIS83UIW4CURAG4G91gylH6E1qSA2qjk2oqAKJ4gwIfFtTRE3BVRIMF8FjUQRCMwmbLBv87LvAfPnnf1PIeVvs8IZzk1DkmPSxxC+GONUdWagwvGCFNV5xrGCZqDA8468Jy0bdhQXqCZ2kblVjI7EZNugF6oCHZFR9/GOgui1IKooeSf2gbEOnBljgE+O4W9moCvSBES6xx0xUiW/cgDJR79d1zTGpEso+nlPs8XXv1/8DVtAiIo4O47gAAAAASUVORK5CYII=) no-repeat center;
+    }
+  }
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
+    color: $warning;
+    text-decoration: underline;
+    &::after {
+      background-color: $warning;
+    }
+  }
+  
+  &--reverse {
+    transform: rotate(180deg)
+  }
+}

@@ -1,0 +1,223 @@
+$footer-breakpoint: 1312px;
+$footer-breakpoint-max: $footer-breakpoint - 1px;
+
+.footer {
+
+  a {
+    color: $white;
+    &:hover {
+      color: $light;
+    }
+  }
+
+  overflow: hidden;
+
+  &__inner {
+    background: $dark;
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 50px;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: -88px;
+      background: $dark;
+      width: calc(100vw + 88px); 
+    }
+
+    .footer__logo {
+      @media (max-width: $footer-breakpoint-max) {
+        display: block;
+        margin: 0 auto;
+        max-width: 270px;
+      }
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .container {
+      @media (max-width: 767px) {
+        padding: 0 15px!important;
+        max-width: 540px!important;
+        margin: 0 auto;
+      }  
+    }
+
+    @media (max-width: $footer-breakpoint-max) {
+      padding-top: 10px;
+    }
+  }
+
+  &__credits {
+    display: inline-flex;
+    font-size: 12px;
+    font-weight: 400;
+    color: $white;
+    line-height: 1.2;
+    width: 100%;
+
+    div {
+      &:last-child::after {
+        display: none;
+      }
+
+      &::after {
+        content: "|";
+        display: inline;
+        padding: 0 5px;
+
+        @media (max-width: $footer-breakpoint-max) {
+          display: none;
+        }
+      }
+
+      @media (max-width: $footer-breakpoint-max) {
+        margin: 5px 0;
+      }
+    }
+
+    @media (max-width: $footer-breakpoint-max) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  // Footer subscribe
+  .wpforms-container {
+    width: 100%;
+    .wpforms-title {
+      font-size: 14px;
+    }
+  }
+
+  // Footer menus
+  #menu-footer {
+    padding-left: 0;
+    padding-bottom: 35px;
+    padding-top: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+    
+    &::after {
+      content: " ";
+      display: block;
+      height: 2px;
+      background: $secondary;
+      width: 200%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      @media (max-width: $footer-breakpoint-max) {
+        width: 100%;
+      }
+
+    }
+
+    li {
+      display: inline-flex;
+      margin: 0 8px;
+
+      &:first-child{
+        margin-left: 0;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: $white;
+
+      }
+
+      @media (max-width: $footer-breakpoint-max) {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+      }
+    }
+
+    @media (max-width: $footer-breakpoint-max) {
+      padding-top: 0;
+    }
+  }
+  .footer__phone {
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 0;
+    padding-bottom: 35px;
+    padding-top: 40px;
+    position: relative;
+    margin: 0 auto;
+
+    @media (max-width: $footer-breakpoint-max) {
+      width: 100%;
+      text-align: center;
+      padding-top: 0px;
+      &::after {
+        content: " ";
+        display: block;
+        height: 2px;
+        background: $secondary;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+  
+}
+
+.widget--footer {
+  margin-bottom: 25px;
+
+  &.wpforms-widget {
+    max-width: 250px;
+    @media (max-width: $footer-breakpoint-max) {
+      max-width: 266px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.footer__main{
+  .container{
+    @media (max-width: $footer-breakpoint-max) {
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: $footer-breakpoint-max) {
+  .footer #menu-footer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .menu-item {
+      flex-shrink: 1;
+      width: auto;
+      white-space: nowrap;
+      &:last-child {
+        flex: 0 0 100%;
+        .phones {
+          display: flex;
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-around
+        }
+      }
+    }
+  }
+}

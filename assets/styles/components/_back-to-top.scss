@@ -1,0 +1,32 @@
+
+
+a#btt {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 68px;
+    right: 21px;
+    height: 44px;
+    text-decoration: none;
+    width: 44px;
+    text-align: center;
+    line-height: 44px;
+    background-color: $primary;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 100;
+    transform: all 0.2s;
+    pointer-events: none;
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+    transition: all 0.2s;
+    &:hover {
+        background: $secondary;
+        color: #fff;
+    }
+    &.active { opacity: 1; pointer-events: auto; }
+}

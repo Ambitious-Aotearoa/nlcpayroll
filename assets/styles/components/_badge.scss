@@ -1,0 +1,55 @@
+// Base class
+//
+// Requires one of the contextual, color modifier classes for `color` and
+// `background-color`.
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: $badge-color;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: $badge-border-radius;
+    text-transform: uppercase;
+  
+    // Empty badges collapse automatically
+    &:empty {
+      display: none;
+    }
+  }
+  
+  // Quick fix for badges in buttons
+  .btn .badge {
+    position: relative;
+    top: -1px;
+  }
+
+  // Colors
+//
+// Contextual variations (linked badges get darker on :hover).
+
+@each $color, $value in $theme-colors {
+    .badge-#{$color} {
+        color: $value;
+        background-color: lighten($value, 35%);
+      
+        @at-root a#{&} {
+          @include hover-focus {
+            color: $value;
+            background-color: darken($value, 10%);
+          }
+      
+          &:focus,
+          &.focus {
+            outline: 0;
+            box-shadow: 0 0 0 $badge-focus-width rgba($value, .5);
+          }
+        }
+    }
+}
+
+  

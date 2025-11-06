@@ -1,0 +1,40 @@
+
+body .mfp-iframe-holder .mfp-content { max-width: 90%; }
+.mfp-close { font-size: 42px; opacity: 0.7; }
+
+.mfp-iframe {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: no-repeat center;
+    background-size: 100% auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 136.5 136.5'%3E%3Cpath d='M100.9 68.2L45.2 96.1V40.4l55.7 27.8zm35.6 0C136.5 30.6 105.9 0 68.2 0S0 30.6 0 68.2s30.6 68.2 68.2 68.2 68.3-30.5 68.3-68.2' fill='%23fff'/%3E%3C/svg%3E");
+    height: 76px;
+    width: 76px;
+    opacity: 0.6;
+    transition: all 0.5s;
+    transform: translate(-50%,-50%);
+    @media (min-width: 992px) {
+      height: 136px;
+      width: 136px;
+    }
+  }
+  &:hover {
+    &:before {
+      opacity: 0.9;
+    }
+  }
+}
+
+.mfp-iframe.btn {
+  width: auto;
+  &:before {
+    display: none;
+  }
+}

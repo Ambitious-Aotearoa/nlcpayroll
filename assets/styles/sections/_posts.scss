@@ -1,0 +1,119 @@
+@media (min-width: 992px) {
+  .section-posts__column--left {
+    min-height: 100%;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -20px;
+      bottom: 0;
+      width: 1px;
+      background: #bfbfbf;
+    }
+  }
+}
+
+.section-posts {
+  clear: both;
+  padding-top: 263px!important;
+  margin-top: -263px;
+  overflow: hidden;
+  &__column--left {
+    padding-top: 134px;
+    padding-bottom: 0;
+    @media (min-width: 992px) {
+      padding-top: 125px;
+      padding-bottom: 125px;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    &--left {
+      align-items: flex-start;
+      @media (min-width: 992px) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 45px;
+    font-weight: 700;
+    color: #2c3a60;
+    line-height: 0.86;
+    margin-bottom: 0;
+    width: 250px;
+    @media (min-width: 992px) {
+      margin-bottom: 40px;
+    }
+    @media (min-width: 1312px) {
+      font-size: 48px;
+      max-width: auto;
+    }
+  }
+
+  &__links {
+    max-width: 420px;
+    width: 100%;
+    &--desktop { display: none; }
+    @media (min-width: 992px) {
+      &--mobile { display: none; }
+      &--desktop { display: block; }
+    }
+    > div {
+      @media (min-width: 992px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__posts {
+    max-width: 420px;
+    width: 100%;
+    padding-top: 42px;
+    padding-bottom: 47px;
+    @media (min-width: 992px) {
+      padding-top: 111px;
+      padding-bottom: 134px;
+      padding-left: 30px;
+      padding-right: 30px;
+      max-width: 480px;
+    }
+    .entry-excerpt:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 60%;
+    bottom: 100%;
+    img {
+      height: 289px;
+      width: auto;
+      max-width: none;
+    }
+    @media (min-width: 992px) {
+      left: 100%;
+      bottom: 134px;
+      img {
+        height: auto;
+      }
+    }
+  }
+}
+
+//to hide the tabs from the homepage
+//body.home {
+//  ul.entry-feature__terms.terms {
+//    display: none;
+//  }
+//}

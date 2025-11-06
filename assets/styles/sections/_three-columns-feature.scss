@@ -1,0 +1,49 @@
+.section-three-columns-feature {
+    overflow: hidden;
+    .container {
+        position: relative;
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            right: -88px;
+            background: #f8f8f8;
+            width: calc(100vw + 88px); 
+        }
+    }
+    .row {
+        margin-left: -20px;
+        margin-right: -20px;
+        & > div {
+            margin-top: 38px;
+            padding-left: 20px;
+            padding-right: 20px;
+            @media (min-width: 992px) {
+                margin-top: 60px;
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
+
+.three-column-feature {
+    position: relative;
+    &__image {
+        margin-bottom: 36px;
+        position: relative;
+        z-index: 2;
+        max-width: 360px;
+        padding-right: 20px;
+    }
+    &__title {
+    }
+    &__actions {
+        margin-top: 30px;
+        @media (min-width: 992px) {
+            margin-top: 40px;
+        }
+    }
+}

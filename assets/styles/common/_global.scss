@@ -1,0 +1,77 @@
+svg { max-width: 100%; }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-y: scroll;
+  letter-spacing: 0.05px;
+  @media (min-width: 1200px) {
+    font-size: 18px;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 { letter-spacing: 0; }
+
+@media (min-width: 768px) {
+    h1, .h1 { font-size: 59.5px; font-weight: 700; line-height: 0.88; }
+    h2, .h2 { font-size: 38.25px; font-weight: 700; line-height: 1.22; }
+    h3, .h3 { font-size: 29.75px; font-weight: 700; line-height: 1.22; }
+    h4, .h4 { font-size: 23px; font-weight: 500; line-height: 1.22; }
+    h5, .h5 { font-size: 18px; font-weight: 700; line-height: 1.22; }
+    h6, .h6 { font-size: 16px; font-weight: 700; line-height: 1.22; }
+}
+
+@media (max-width: 1200px) {
+  h1, .h1 { font-size: 45px; font-weight: 700; line-height: 0.87; }
+  h2, .h2 { font-size: 30px; font-weight: 700; line-height: 1.22; }
+  h3, .h3 { font-size: 30px; font-weight: 700; line-height: 1.22; }
+  h4, .h4 { font-size: 23px; font-weight: 500; line-height: 1.22; }
+  h5, .h5 { font-size: 18px; font-weight: 700; line-height: 1.22; }
+  h6, .h6 { font-size: 16px; font-weight: 700; line-height: 1.22; }
+}
+
+@each $spacer, $value in $spacers-set {
+  .p-#{$spacer} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+  .pt-#{$spacer} {
+    padding-top: $value;
+  }
+  .pb-#{$spacer} {
+    padding-bottom: $value;
+  }
+}
+
+.phones {
+  display: flex;
+  flex-direction: column;
+  &__link {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    &:hover {
+      text-decoration: none;
+    }
+    + .phones__link {
+      margin-top: 4px;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__text {
+    margin-left: 10px;
+  }
+  .icon-phone {
+    max-width: none;
+  }
+}

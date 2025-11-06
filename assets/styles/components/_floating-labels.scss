@@ -1,0 +1,112 @@
+
+.form--floating-labels.wpforms-container {
+
+    .wpforms-field {
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+  
+    .wpforms-field-label {
+        font-size: 18px;
+        @media (min-width: 992px) {
+            font-size: 23px;
+        }
+    }
+  
+    .wpforms-field-text,
+    .wpforms-field-email,
+    .wpforms-field-select {
+        border-bottom: 2px solid $primary;
+        position: relative;
+      
+        input, 
+        select {
+            border: none!important;
+            box-shadow: none!important;
+            font-size: 18px;
+            padding: 0;
+            font-weight: 500;
+            color: $primary;
+            width: 100%;
+            max-width: none;
+            @media (min-width: 992px) {
+                font-size: 23px;
+            }
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+        select {
+            background: no-repeat 95% 51%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23174061' d='M.012 0h10.976L5.5 6.986z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            -moz-appearance: none; 
+            -webkit-appearance: none; 
+            appearance: none;
+        }
+        input {
+            padding: 12px 0;
+            width: 100%;
+            max-width: none;
+            &::placeholder {
+                color: transparent;
+            }
+        }
+  
+        .wpforms-field-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            line-height: 44px;
+            margin: 0;
+            padding-left: 0px;
+            transition: all 160ms;
+            pointer-events: none;
+            @media (min-width: 992px) {
+                line-height: 58px;
+            }
+        }
+    }
+    
+    textarea {
+        border: 2px solid $primary;
+    }
+  
+    .is-floating {
+        .wpforms-field-label {
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 12px;
+            bottom: 100%;
+            @media (min-width: 992px) {
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+    }
+    .is-focused {
+        border-color: $secondary;
+        .wpforms-field-label {
+            color: $secondary;
+        }
+    }
+  
+    .wpforms-submit {
+        text-decoration: underline!important;
+        font-weight: bold;
+        font-size: 18px;
+        &::after{
+            margin-top: 7px;
+        }
+    }
+
+    label.wpforms-error {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        margin-top: 4px;
+    }
+}

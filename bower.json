@@ -1,0 +1,41 @@
+{
+  "name": "acfactory",
+  "homepage": "https://skyrocketmarketing.com.au",
+  "authors": [
+    "Joel Warren <joel@skyrocketmarketing.com.au>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.3.0",
+    "popper.js": "^1.12.3",
+    "magnific-popup": "^1.1.0",
+    "swiper": "^5.2.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "./js/dist/util.js",
+        "./js/dist/dropdown.js",
+        "./js/dist/collapse.js",
+        "./scss/_variables.scss",
+        "./scss/_mixins.scss",
+        "./scss/_reboot.scss",
+        "./scss/_type.scss",
+        "./scss/_grid.scss",
+        "./scss/_transitions.scss",
+        "./scss/_alert.scss",
+        "./scss/_utilities.scss"
+      ]
+    },
+    "swiper": {
+      "main": [
+        "./package/js/swiper.js",
+        "./package/css/swiper.css"
+      ]
+    },
+    "jquery": {
+      "main": []
+    }
+  }
+}

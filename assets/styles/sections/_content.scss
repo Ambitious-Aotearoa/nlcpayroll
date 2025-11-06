@@ -1,0 +1,9 @@
+.section-content {
+    &__title {
+        margin-bottom: 32px;
+    }
+
+    &__content :last-child {
+        margin: 0;
+    }
+}

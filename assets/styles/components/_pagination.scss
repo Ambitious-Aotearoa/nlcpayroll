@@ -1,0 +1,95 @@
+ul.page-numbers {
+  display: flex;
+  @include list-unstyled();
+  @include border-radius();
+  justify-content: center;
+  margin: 0;
+  border: none;
+
+  > li {
+    position: relative;
+    display: block;
+    line-height: $pagination-line-height;
+    color: $pagination-color;
+    background-color: $pagination-bg;
+    border: none;
+    margin: 0 2.5px;
+    &:first-child {
+      > span,
+      > a {
+        margin-left: 0;
+        @include border-left-radius($border-radius);
+      }
+    }
+    &:last-child {
+      > span,
+      > a {
+        @include border-right-radius($border-radius);
+      }
+    }
+    > span,
+    > a {
+      display: block;
+      border-radius: 0;
+      width: 33px;
+      padding: $pagination-padding-y $pagination-padding-x;
+      &:hover,
+      &:focus {
+        z-index: 2;
+        color: $pagination-hover-color;
+        text-decoration: none;
+        background-color: $pagination-hover-bg;
+      }
+    }
+    > span.current {
+      z-index: 1;
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+    }
+  }
+
+  .prev { 
+    text-indent: 33px;
+    overflow: hidden;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      height: 9px;
+      width: 9px;
+      margin-left: 2px;
+      transform: translate(-50%,-50%) rotate(-135deg);
+      transform-origin: 50% 50%;
+      border-top: 1px solid $pagination-color;
+      border-right: 1px solid $pagination-color;
+    }
+    &:hover:before,
+    &:focus:before {
+      border-color: $pagination-hover-color;
+    }
+  }
+  .next { 
+    text-indent: 33px;
+    overflow: hidden;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      height: 9px;
+      width: 9px;
+      margin-left: -2px;
+      transform: translate(-50%,-50%) rotate(45deg);
+      transform-origin: 50% 50%;
+      border-top: 1px solid $pagination-color;
+      border-right: 1px solid $pagination-color;
+    }
+    &:hover:before,
+    &:focus:before {
+      border-color: $pagination-hover-color;
+    }
+  }
+}

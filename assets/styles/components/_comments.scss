@@ -1,0 +1,169 @@
+
+.comment-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  > * {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    margin-bottom: $form-group-margin-bottom;
+    &.comment-form-author,
+    &.comment-form-email,
+    &.comment-form-url {
+      width: 33.3333%;
+    }
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+  }
+  textarea {
+    height: 68px;
+  }
+  input[type="submit"] {
+    @extend .btn;
+    @extend .btn-secondary;
+  }
+}
+
+.comments__title,
+.comment-reply-title {
+
+}
+
+.comments__list {
+  margin-bottom: 50px;
+  padding: 0;
+  list-style: none;
+}
+
+.comment {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  border-bottom: 1px solid rgba($light, 0.15);
+
+  .children {
+    padding-left: 30px;
+    margin-top: 40px;
+    margin-bottom: 0;
+    list-style: none;
+    li {
+      border-top: 1px solid rgba($light, 0.15);
+      border-bottom: none;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.comment-respond {
+  margin-top: 30px;
+}
+
+.comment-reply-title {
+
+}
+
+.comment-body {
+  position: relative;
+  padding-left: 105px;
+  p { margin-bottom: 10px; }
+}
+
+.pingback .comment-body {
+  padding-left: 0;
+}
+
+.comment-meta {
+  line-height: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: right;
+  a {
+    color: $light;
+    vertical-align: middle;
+    &:hover {
+      color: $dark;
+    }
+  }
+}
+
+.comment-author {
+  line-height: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  float: left;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $body-color;
+  }
+
+  .fn {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .says {
+    margin-left: 3px;
+    vertical-align: middle;
+  }
+
+  img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    max-width: 74px;
+    border-radius: 50%;
+  }
+}
+
+.comment-awaiting-moderation {
+  margin-top: $spacer;
+  display: block;
+  text-align: left;
+  @extend .alert;
+  @extend .alert-warning;
+}
+
+.comment-edit-link {
+  color: $gray-500;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.comments .reply {
+  margin-top: 15px;
+  a {
+    font-weight: bold;
+    display: inline;
+  }
+}
+
+.comment.bypostauthor {
+  .fn {
+    color: $primary;
+    &:after {
+      content: 'Post author';
+      margin-left: 8px;
+      display: inline-block;
+      vertical-align: 1px;
+      padding: 2px 8px;
+      background: $primary;
+      color: $white;
+      border-radius: 3px;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+#cancel-comment-reply-link {
+  display: inline-block;
+  font-size: 0;
+}

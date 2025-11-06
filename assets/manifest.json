@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "editor-styles.css": {
+      "files": [
+        "styles/editor-styles.scss"
+      ],
+      "main": true
+    }
+  },
+  "config": {
+    "devUrl": "http://loc.nlcpayroll.com/"
+  }
+}

@@ -1,0 +1,103 @@
+.section-hero {
+    height: 344px;
+    padding-top: 60px!important;
+    padding-bottom: 60px!important;
+    position: relative;
+    color: #fff;
+    background: $dark;
+    text-align: center;
+    background-image: none!important;
+    &__background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.6;
+        }
+    }
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        z-index: 1;
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+
+    .container {
+        position: relative;
+        height: 100%;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__inner {
+        max-width: 620px;
+    }
+    &__title {
+        color: inherit;
+        strong {
+            color: $warning;
+        }
+    }
+    &__before-title {
+        font-size: 20px;
+        letter-spacing: 0.06px;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    &__actions {
+        margin-top: 2rem;
+    }
+
+    &--lg {
+        height: 493px;
+    }
+    @media (min-width: 992px) {
+        height: 452px;
+        &--lg {
+            height: 700px;
+        }
+
+        .section-hero__background-image {
+            img {
+                opacity: 1;
+            }
+        }
+    }
+
+    &--overlay {
+        background-image: linear-gradient(46deg, rgba(151, 198, 59, 0.56) 40%, rgba(44, 58, 96, 0.56) 60%, rgba(44, 58, 96, 0.56) 80%)!important;
+        .section-hero__background-image {
+            img {
+                opacity: 0.6;
+                @supports (mix-blend-mode: soft-light) {
+                    opacity: 1;
+                    mix-blend-mode: soft-light;
+                }
+            }
+        }
+    }
+}
