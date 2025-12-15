@@ -34,27 +34,7 @@ jobs:
 
       - name: Deploy theme to Hostinger
 
-        run: |
-
-          rsync -avz --delete \
-
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.HOSTINGER_PORT }} -o StrictHostKeyChecking=no" \
-
-            --exclude 'node_modules' \
-
-            --exclude '.git' \
-
-            --exclude '.github' \
-
-            --exclude '.ddev' \
-
-            --exclude 'package-lock.json' \
-
-            --exclude 'yarn.lock' \
-
-            --exclude '.gitignore' \
-
-            ./ ${{ secrets.HOSTINGER_USER }}@${{ secrets.HOSTINGER_HOST }}:${{ secrets.HOSTINGER_PATH }}/wp-content/themes/nlcpayroll/
+        run: rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.HOSTINGER_PORT }} -o StrictHostKeyChecking=no" --exclude 'node_modules' --exclude '.git' --exclude '.github' --exclude '.ddev' --exclude 'package-lock.json' --exclude 'yarn.lock' --exclude '.gitignore' ./ ${{ secrets.HOSTINGER_USER }}@${{ secrets.HOSTINGER_HOST }}:${{ secrets.HOSTINGER_PATH }}/wp-content/themes/nlcpayroll/
 
       - name: Cleanup
 
