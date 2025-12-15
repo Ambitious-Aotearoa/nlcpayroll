@@ -6,6 +6,8 @@
  * @since acfactory 1.0
  */
 
+// NOTE: All image-related logic (passing variables, Flexbox) has been removed
+// as the image is now handled once outside the loop in section-posts.php.
 ?>
 
 <article <?php post_class( 'entry-excerpt' ); ?>>

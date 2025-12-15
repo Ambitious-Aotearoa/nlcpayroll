@@ -1,3 +1,5 @@
+// File: posts.scss
+
 @media (min-width: 992px) {
   .section-posts__column--left {
     min-height: 100%;
@@ -17,9 +19,18 @@
 
 .section-posts {
   clear: both;
-  padding-top: 263px!important;
-  margin-top: -263px;
+
+  /* Standard position and overflow */
   overflow: hidden;
+  position: static;
+
+  /* Ensures the section has a minimum height to display content if posts are short */
+  min-height: 400px;
+
+  & > .container > .row {
+    height: 100%;
+  }
+
   &__column--left {
     padding-top: 134px;
     padding-bottom: 0;
@@ -35,12 +46,22 @@
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    height: 100%;
+
     &--left {
       align-items: flex-start;
       @media (min-width: 992px) {
         justify-content: center;
       }
+    }
+
+    /* Styling for the third column (col-lg-4) */
+    &--image {
+      padding: 0; /* Remove column padding to let image reach edges */
+      position: static;
+      z-index: 10;
+      height: 100% !important; /* Forces column to stretch */
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
 
@@ -60,60 +81,28 @@
     }
   }
 
-  &__links {
-    max-width: 420px;
-    width: 100%;
-    &--desktop { display: none; }
-    @media (min-width: 992px) {
-      &--mobile { display: none; }
-      &--desktop { display: block; }
-    }
-    > div {
-      @media (min-width: 992px) {
-        margin-bottom: 20px;
-      }
-    }
-  }
+  /* 🔑 CRITICAL OVERRIDE: Styling for the image figure inside the third column */
+  .section-posts__image {
+    position: relative !important;
+    z-index: auto !important;
+    width: 100% !important;
+    height: 100% !important;
 
-  &__posts {
-    max-width: 420px;
-    width: 100%;
-    padding-top: 42px;
-    padding-bottom: 47px;
-    @media (min-width: 992px) {
-      padding-top: 111px;
-      padding-bottom: 134px;
-      padding-left: 30px;
-      padding-right: 30px;
-      max-width: 480px;
-    }
-    .entry-excerpt:last-of-type {
-      margin: 0;
-    }
-  }
-
-  &__image {
-    position: absolute;
-    left: 60%;
-    bottom: 100%;
     img {
-      height: 289px;
-      width: auto;
-      max-width: none;
-    }
-    @media (min-width: 992px) {
-      left: 100%;
-      bottom: 134px;
-      img {
-        height: auto;
-      }
+      position: static !important;
+      object-fit: cover !important; // Ensure it covers the area
+      width: 100% !important;
+      height: 100% !important;
     }
   }
 }
 
-//to hide the tabs from the homepage
-//body.home {
-//  ul.entry-feature__terms.terms {
-//    display: none;
-//  }
-//}
+/* --- Styles for the Post Loop Item (entry-excerpt in content-simple.php) --- */
+
+.entry-excerpt {
+  margin-bottom: 30px;
+
+  &__link {
+    display: block;
+  }
+}

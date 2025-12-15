@@ -13,7 +13,7 @@ $form_shortcode = $section['form_shortcode'];
             <div class="col-lg-6">
                 <div class="section-form__column section-form__column--left">
                     <div class="section-form__header">
-                        <div class="section-form__title h1 text-secondary">
+                        <div class="section-form__title h1 text-secondary font-weight:500">
                             <?php echo $title; ?>
                         </div>
                         <div class="section-form__content">

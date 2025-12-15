@@ -24,6 +24,7 @@
             font-size: 30px;
             line-height: 1.17;
             margin-bottom: 30px;
+            font-weight: 500;
         }
     }
 
@@ -133,7 +134,7 @@
         font-size: 1rem;
         font-weight: 500;
         line-height: 1.72;
-        border-bottom: 2px solid #fff !important;
+        border-bottom: 1px solid #fff !important;
 
         &:focus-visible {
           outline: unset !important;
